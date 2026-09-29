@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
+
 export default defineConfig({
   plugins: [react()],
   test: {
@@ -8,8 +9,10 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.mjs',
   },
-
   resolve: {
-    tsconfigPaths: true,
+    alias: {
+      // Safely resolves the directory using standard Web APIs
+      "@components": new URL("./src/components", import.meta.url).pathname,
+    },
   },
 });

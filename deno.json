@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@components/": "./src/components/"
+  }
+}
+

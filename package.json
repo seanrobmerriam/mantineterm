@@ -20,8 +20,25 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
-    "@mantine/core": "9.6.2",
-    "@mantine/hooks": "9.6.2",
+    "@mantine/carousel": "^9.6.3",
+    "@mantine/code-highlight": "^9.6.3",
+    "@mantine/core": "^9.6.3",
+    "@mantine/dropzone": "^9.6.3",
+    "@mantine/form": "^9.6.3",
+    "@mantine/hooks": "^9.6.3",
+    "@mantine/lightbox": "^9.6.3",
+    "@mantine/modals": "^9.6.3",
+    "@mantine/notifications": "^9.6.3",
+    "@mantine/nprogress": "^9.6.3",
+    "@mantine/spotlight": "^9.6.3",
+    "@mantine/tiptap": "^9.6.3",
+    "@tabler/icons-react": "^3.48.0",
+    "@tiptap/extension-link": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/react": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.4"
@@ -43,8 +60,8 @@
     "oxc-config-mantine": "^1.0.0",
     "oxfmt": "^0.70.0",
     "oxlint": "^1.70.0",
-    "postcss": "^8.5.6",
-    "postcss-preset-mantine": "1.18.0",
+    "postcss": "^8.5.28",
+    "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
     "prop-types": "^15.8.1",
     "storybook": "^10.0.0",
@@ -53,6 +70,5 @@
     "typescript": "7.0.2",
     "vite": "^8.0.0",
     "vitest": "^5.0.0"
-  },
-  "packageManager": "yarn@4.18.0"
+  }
 }
