@@ -1794,6 +1794,29 @@
     "@webcontainer/env@1.1.1": {
       "integrity": "sha512-6aN99yL695Hi9SuIk1oC88l9o0gmxL1nGWWQ/kNy81HigJ0FoaoTXpytCj6ItzgyCEwA9kF1wixsTuv5cjsgng=="
     },
+    "@wterm/core@0.5.4": {
+      "integrity": "sha512-yIhbn27ELHDjEDtduDIycHWEEaobJGhqR+WqKgCoSPYReCIrR+skJS67PBk3Wp6+yLImfQ3Fv1CJ4hLXKLa7Fg=="
+    },
+    "@wterm/dom@0.5.4": {
+      "integrity": "sha512-9zxZq52BFpBtVEkBEbZF5a+9dX+eIADQdlTRq6YgGxHP/G/aDXyRja+tebQtAYqx9KY8qJVm20vNOhQxwBe/FQ==",
+      "dependencies": [
+        "@wterm/core"
+      ]
+    },
+    "@wterm/ghostty@0.5.4": {
+      "integrity": "sha512-W6wlGhHiGf/2tF/uZo8qHtaYqA3Ebf+6VhdPidiWuqEU37Kj+YSkuXCXP/qORSD0roec/5Z16qYRyF5HsC9XJg==",
+      "dependencies": [
+        "@wterm/core"
+      ]
+    },
+    "@wterm/react@0.5.4_@wterm+dom@0.5.4_react@19.3.0_react-dom@19.3.0": {
+      "integrity": "sha512-6piarasJdCddCQMXIoCTQGKfmzu55XFL6U3sb1xXy/AIqFhO/3cgYC/n5XmCtfg9YBT4RhQjekAjtG8ZJL/KGg==",
+      "dependencies": [
+        "@wterm/dom",
+        "react",
+        "react-dom"
+      ]
+    },
     "ajv@8.20.0": {
       "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==",
       "dependencies": [
@@ -3700,6 +3723,9 @@
         "npm:@types/react-dom@^19.2.1",
         "npm:@types/react@^19.2.2",
         "npm:@vitejs/plugin-react@6",
+        "npm:@wterm/dom@~0.5.4",
+        "npm:@wterm/ghostty@~0.5.4",
+        "npm:@wterm/react@~0.5.4",
         "npm:embla-carousel-react@^8.6.0",
         "npm:embla-carousel@^8.6.0",
         "npm:identity-obj-proxy@3",

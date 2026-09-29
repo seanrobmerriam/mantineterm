@@ -4,9 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "copy-wasm": "deno run --allow-read --allow-write scripts/copy-wasm.mjs",
+    "dev": "npm run copy-wasm && vite",
+    "build": "npm run copy-wasm && tsc && vite build",
+    "preview": "npm run copy-wasm && vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "npm run oxlint && npm run stylelint",
     "oxlint": "oxlint -c oxlint.config.mjs .",
@@ -15,9 +16,9 @@
     "format:write": "oxfmt -c oxfmt.config.mjs --write \"**/*.{ts,tsx}\"",
     "vitest": "vitest run",
     "vitest:watch": "vitest",
-    "test": "npm run typecheck && npm run format:test && npm run lint && npm run vitest && npm run build",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "test": "npm run typecheck && npm run format:test && npm run lint && npm run copy-wasm && npm run vitest && npm run build",
+    "storybook": "npm run copy-wasm && storybook dev -p 6006",
+    "storybook:build": "npm run copy-wasm && storybook build"
   },
   "dependencies": {
     "@mantine/carousel": "^9.6.3",
@@ -37,6 +38,9 @@
     "@tiptap/pm": "^3.31.3",
     "@tiptap/react": "^3.31.3",
     "@tiptap/starter-kit": "^3.31.3",
+    "@wterm/dom": "^0.5.4",
+    "@wterm/ghostty": "^0.5.4",
+    "@wterm/react": "^0.5.4",
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "react": "^19.2.0",

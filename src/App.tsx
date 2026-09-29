@@ -1,19 +1,13 @@
-import {
-  AppShell,
-  Burger, // Added missing import
-  MantineProvider,
-} from "@mantine/core";
-import { useDisclosure, useViewportSize } from "@mantine/hooks"; // Added useDisclosure
-import { NavbarSegmented } from "@components/NavbarSegmented";
-import "@mantine/core/styles.css"; // Ensure Mantine core styles are loaded
-import "./styles.css"; 
+import '@mantine/core/styles.css';
+
+import { NavbarSegmented } from '@components/NavbarSegmented';
+import { TerminalPanel } from '@components/TerminalPanel';
+import { AppShell, Burger, MantineProvider } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import './styles.css';
 
 export default function App() {
-  // Added missing disclosure state for the mobile navbar drawer
   const [opened, { toggle }] = useDisclosure();
-  
-  const mainContentPadding = 16;
-  const viewport = useViewportSize();
 
   return (
     <MantineProvider>
@@ -26,13 +20,15 @@ export default function App() {
           collapsed: { mobile: !opened },
         }}
       >
-        <AppShell.Header style={{ display: 'flex', alignItems: 'center', gap: mainContentPadding, paddingInline: mainContentPadding }}>
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            hiddenFrom="sm"
-            size="sm"
-          />
+        <AppShell.Header
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16,
+            paddingInline: 16,
+          }}
+        >
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <div>Logo</div>
         </AppShell.Header>
 
@@ -40,8 +36,8 @@ export default function App() {
           <NavbarSegmented />
         </AppShell.Navbar>
 
-        <AppShell.Main>
-          Main Content Area (Viewport: {viewport.width}x{viewport.height})
+        <AppShell.Main style={{ position: 'relative', minHeight: 0 }}>
+          <TerminalPanel />
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
